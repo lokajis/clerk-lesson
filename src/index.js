@@ -6,10 +6,11 @@ import { ClerkProvider, RedirectToSignIn, SignIn, SignUp, SignedIn, SignedOut } 
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import ProtectedPage from "./ProtectedPage";
 
-if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
+console.log(process.env.REACT_APP_CLERK_PUBLISHABLE_KEY);
+if (!"pk_test_Y3VycmVudC1zcG9uZ2UtMjkuY2xlcmsuYWNjb3VudHMuZGV2JA") {
   throw new Error("Missing Publishable Key");
 }
-const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+const clerkPubKey = "pk_test_Y3VycmVudC1zcG9uZ2UtMjkuY2xlcmsuYWNjb3VudHMuZGV2JA";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -60,4 +61,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
